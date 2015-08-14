@@ -42,4 +42,6 @@ function ReservationsViewModel() {
     self.removeSeat = function(seat) { self.seats.remove(seat) }
 }
 
-ko.applyBindings(new ReservationsViewModel());
+$(document).ready(function() {
+    ko.applyBindings(new ReservationsViewModel());
+});
