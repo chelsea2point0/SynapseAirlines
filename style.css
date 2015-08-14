@@ -51,3 +51,7 @@ h2 {
 	padding-top: 200px;
 	text-align: left;
 }
+
+table, th, td {
+	padding: 10px 20px 10px 0;
+}
