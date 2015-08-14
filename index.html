@@ -1,32 +1,63 @@
 <!doctype html>
 <html>
   <head>
-    <title>Fly Schaefer Airlines</title>
+    <title>Fly Synapse Airlines</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src=jQuery.js></script>
     <script type='text/javascript' src='knockout-3.3.0.js'></script>
     <script type='text/javascript' src="script.js"></script>
   </head>
 <body>
-    <h2>Your seat reservations (<span data-bind="text: seats().length"></span>)</h2>
+    <div class="header">
+        <div class="row">
+            <div class="col-md-6">
+                <h2><img src="images/planelogo.png" width="60px">Synapse Airlines</h2>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav">
+                  <li><a href="#">Available Flights</a></li>
+                  <li><a href="#">Special Offers</a></li>
+                  <li><a href="#">SchaefeRewards</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
 
-    <table>
-        <thead><tr>
-            <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
-        </tr></thead>
-        <tbody data-bind="foreach: seats">
-            <tr>
-                <td><input data-bind="value: name" /></td>
-                <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
-                <td data-bind="text: formattedPrice"></td>
-                <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
-            </tr>    
-        </tbody>
-    </table>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Time flies when you're having fun.</h1>
+        <h3>Find to your happy place today.</h3>
+      </div>
+    </div>
 
-    <button data-bind="click: addSeat, enable: seats().length < 5">Reserve another seat</button>
+    <div class="reservations">
+        <div class="container">
+            <h2>Your seat reservations (<span data-bind="text: seats().length"></span>)</h2>
 
-    <h3 data-bind="visible: totalSurcharge() > 0">
-        Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
-    </h3>
+            <table>
+                <thead><tr>
+                    <th>Passenger name</th><th>Seat Requested</th><th>Meal</th><th>Surcharge</th><th></th>
+                </tr></thead>
+                <tbody data-bind="foreach: seats">
+                    <tr>
+                        <td><input data-bind="value: name" /></td>
+                        <td><select data--bind="options: $root.availableLocations, value: location, optionsText: 'seatType'"></select></td>
+                        <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+                        <td data-bind="text: formattedPrice"></td>
+                        <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+                    </tr>    
+                </tbody>
+            </table>
+
+            <button data-bind="click: addSeat, enable: seats().length < 5">Reserve another seat</button>
+
+            <h3 data-bind="visible: totalSurcharge() > 0">
+                Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+            </h3>
+        </div>
+    </div>
 </body>
 </html>
