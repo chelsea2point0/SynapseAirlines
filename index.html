@@ -12,10 +12,10 @@
 <body>
     <div class="header">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h2><img src="images/planelogo.png" width="60px">Synapse Airlines</h2>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <ul class="nav">
                   <li><a href="#">Available Flights</a></li>
                   <li><a href="#">Special Offers</a></li>
@@ -35,8 +35,8 @@
 
     <div class="reservations">
         <div class="container">
-            <h2>Your seat reservations (<span data-bind="text: seats().length"></span>)</h2>
-
+            <h2>Your travel reservations (<span data-bind="text: seats().length"></span>)</h2>
+            <hr>
             <table>
                 <thead><tr>
                     <th>Passenger name</th><th>Seat Requested</th><th>Meal</th><th>Surcharge</th><th></th>
@@ -57,7 +57,14 @@
             <h3 data-bind="visible: totalSurcharge() > 0">
                 Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
             </h3>
+            <hr>
         </div>
     </div>
+
+    <div class="footer">
+       <div class="container">
+         <p>&#169; Synapse Airlines, 2015</p>
+       </div>
+     </div>
 </body>
 </html>

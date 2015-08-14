@@ -16,10 +16,11 @@ h2 {
 }
 
 .header {
+	margin-left: 30px;
 	text-align: right;
 }
 
-.header li, .footer li {
+.header li {
 	list-style: none;
 	display: inline-block;
 	padding-bottom: 10px;
@@ -54,4 +55,12 @@ h2 {
 
 table, th, td {
 	padding: 10px 20px 10px 0;
+}
+
+.footer {
+	height: 60px;
+	background-color: black;
+	color: white;
+	padding-top: 22px;
+	text-align: right;
 }
