@@ -19,7 +19,7 @@
                 <ul class="nav">
                   <li><a href="#">Available Flights</a></li>
                   <li><a href="#">Special Offers</a></li>
-                  <li><a href="#">SchaefeRewards</a></li>
+                  <li><a href="#">Fly Rewards</a></li>
                 </ul>
             </div>
         </div>
@@ -28,8 +28,8 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h1>Time flies when you're having fun.</h1>
-        <h3>Find to your happy place today.</h3>
+        <h1>There's a big world out there. </h1>
+        <h3>Fly Synapse and explore it all.</h3>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
                 <tbody data-bind="foreach: seats">
                     <tr>
                         <td><input data-bind="value: name" /></td>
-                        <td><select data--bind="options: $root.availableLocations, optionsText: 'seatType'"></select></td>
+                        <td><select data-bind="options: $root.availableLocations, value: location, optionsText: 'seatType'"></select></td>
                         <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
                         <td data-bind="text: formattedPrice"></td>
                         <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
