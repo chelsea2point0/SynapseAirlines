@@ -39,11 +39,13 @@
             <hr>
             <table>
                 <thead><tr>
-                    <th>Passenger name</th><th>Seat Requested</th><th>Meal</th><th>Surcharge</th><th></th>
+                    <th>Passenger name</th><th>Departure City</th><th>Arrival City</th><th>Seat Requested</th><th>Meal</th><th>Surcharge</th><th></th>
                 </tr></thead>
                 <tbody data-bind="foreach: seats">
                     <tr>
                         <td><input data-bind="value: name" /></td>
+                        <td><input data-bind="value: departure" /></td>
+                        <td><input data-bind="value: arrival" /></td>
                         <td><select data-bind="options: $root.availableLocations, value: location, optionsText: 'seatType'"></select></td>
                         <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
                         <td data-bind="text: formattedPrice"></td>
